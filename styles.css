@@ -1,0 +1,93 @@
+.heading {
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%
+}
+
+.results-conatiner {
+    display: flex;
+    flex-direction: column;
+}
+.error {
+    display: none;
+    margin-top: 1rem;
+    margin-left: 15rem;
+}
+.first-name,.last-name,.country,.player-score {
+    width: 7.5rem
+}
+.add-player {
+    width: 6rem;
+    background-color: #E6C9C5;
+}
+.add-player:focus {
+    outline: 0;
+}
+.player-div {
+    display: flex;
+    background-color: #E6C9C5;
+    margin-top: 1rem;
+    width: 60%;
+    font-size: 12px;
+    height: 4rem;
+}
+.name-div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-left: 2rem;
+    
+    justify-content: center;
+}
+.full-name-div {
+    
+
+}
+.time-div {
+    display: flex;
+    margin-top: 0.5rem;
+
+}
+.country-div {
+ width: 20%;
+ padding-left: 2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.score-div {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.del-add-div {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+.del-button,.plus-button,.minus-button {
+ width: 2rem;
+ height: 2rem;
+ border-radius: 50%;
+ margin-left: 1rem;
+ border-style: solid;
+ text-align: center;
+
+}
+.del-button {
+    color: red;
+}
+
