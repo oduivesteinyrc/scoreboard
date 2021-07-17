@@ -1,0 +1,42 @@
+@media (max-width:900px) {
+  .header-grid {
+   grid-template-columns: repeat(2,1fr);
+  }
+  .header-grid *:last-child {
+    grid-column : 1/span 2;
+  }
+}
+@media (max-width:700px) {
+ .players-grid {
+   grid-template-columns: 3fr 1fr 1fr 1fr;
+ }
+}
+@media (max-width:500px) {
+ .players-grid {
+   grid-template-columns: 2fr 1fr 1fr;
+ }
+ .players-grid div:last-child {
+   grid-column: 1/span 3;
+   display: flex;
+   justify-content: center;
+ }
+}
+@media (max-width:400px) {
+  .header-grid {
+   grid-template-columns: 1fr;
+  }
+  .header-grid *:last-child {
+    grid-column : 1;
+  }
+   .players-grid {
+   grid-template-columns: 1fr;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ .players-grid div:last-child {
+   grid-column: 1;
+
+ }
+}

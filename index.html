@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>30 Days of Javascript Challenge Leaderboard</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/score.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <title>Player Scoreboard</title>
 </head>
 <body>
-    <header>
-        <h3 class="heading">30 days of Javascript Challenge Leaderboard</h3>
-    </header>
-    <main>
-        <div class="wrapper">
-            <div class="search-container">
-                <input type="text" class="first-name" placeholder="First Name">
-                <input type="text" class="last-name" placeholder="Last Name">
-                <input type="text" class="country" placeholder="Country">
-                <input type="text" class="player-score" placeholder="Player Score">
-                <button class="add-player">Add Player</button>
-            </div>
-            <div class="error"></div>
-            <div class="results-conatiner"></div>
-        </div>
+  <header>
+    <div class="wrapper">
+      <h1>Leader Scoreboard</h1>
+      <div class="header-grid">
+        <input type="text" name="first-name" class="first-name
+         bdr" placeholder="First Name">
+        <input type="text" name="last-name" class="last-name bdr" placeholder="Last Name">
+        <input type="text" name="country" class="country bdr" placeholder="Country">
+        <input type="text" name="player-score" class="player-score bdr" placeholder="Player Score">
+        <button class="btn">Add Player</button>
+      </div>
+      <p class="error-msg"></p>
+    </div>
+  </header>
+  <section>
+    <div class="wrapper">
+     <div class="players-info">
 
-    </main>
-   <script src="./date.js"></script> 
-   <script src="./main.js"></script>
+     </div>
+    </div>
+  </section>
+  <script src="./js/players.js"></script>
+  <script src="./js/date.js"></script>
+  <script src="./js/id.js"></script>
+  <script src="./js/validations.js"></script>
+  <script src="./js/functions.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
