@@ -25,7 +25,7 @@ const addPlayer = (playersInfo, {
 }) => {
   playersInfo.innerHTML = ''
   let id = uuidv4()
-  let date = getDate()
+  let date = moment().format('MMM DD, YYYY HH:mm')
   score = Number(score)
   let playersJSON = JSON.parse(localStorage.getItem('players'))
   playersJSON.push({
