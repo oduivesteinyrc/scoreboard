@@ -1,3 +1,14 @@
+const getPlayers = () => {
+  let playersJSON = localStorage.getItem('players')
+  try {
+    return playersJSON ? JSON.parse(playersJSON) : []
+  } catch (error) {
+    return []
+  }
+}
+const setPlayers = (players) => {
+  localStorage.setItem('players', JSON.stringify(players))
+}
 const sortPlayers = players => {
   players.sort((a, b) => {
     if (a.score < b.score) return 1
@@ -27,7 +38,7 @@ const addPlayer = (playersInfo, {
   let id = uuidv4()
   let date = moment().format('MMM DD, YYYY HH:mm')
   score = Number(score)
-  let playersJSON = JSON.parse(localStorage.getItem('players'))
+  let playersJSON = getPlayers()
   playersJSON.push({
     id,
     firstName,
@@ -37,7 +48,7 @@ const addPlayer = (playersInfo, {
     date
   })
   sortPlayers(playersJSON)
-  localStorage.setItem('players', JSON.stringify(playersJSON))
+  setPlayers(playersJSON)
   for (const player of playersJSON) {
     displayPlayers(playersInfo, player)
   }
@@ -45,7 +56,7 @@ const addPlayer = (playersInfo, {
 
 const editPlayer = (playersInfo, id, action) => {
   playersInfo.innerHTML = ''
-  let playersJSON = JSON.parse(localStorage.getItem('players'))
+  let playersJSON = getPlayers()
   if (action == 'del') {
     playersJSON = playersJSON.filter(player => player.id != id)
   }
@@ -67,7 +78,7 @@ const editPlayer = (playersInfo, id, action) => {
   }
 
   sortPlayers(playersJSON)
-  localStorage.setItem('players', JSON.stringify(playersJSON))
+  setPlayers(playersJSON)
   for (const player of playersJSON) {
     displayPlayers(playersInfo, player)
   }

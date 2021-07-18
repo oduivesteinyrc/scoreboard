@@ -7,21 +7,13 @@ const userScore = document.querySelector('.player-score')
 const errorMsg = document.querySelector('.error-msg')
 const borders = document.querySelectorAll('.bdr')
 
-const playersJSON = JSON.parse(localStorage.getItem('players'))
+const playersJSON = getPlayers()
 playersInfo.innerHTML = ''
-if (!playersJSON) {
-  localStorage.setItem('players', JSON.stringify(players))
-  sortPlayers(players)
-  for (const player of players) {
-    displayPlayers(playersInfo, player)
-  }
-
-} else {
-  sortPlayers(playersJSON)
-  for (const player of playersJSON) {
-    displayPlayers(playersInfo, player)
-  }
+sortPlayers(playersJSON)
+for (const player of playersJSON) {
+  displayPlayers(playersInfo, player)
 }
+
 
 
 addButton.addEventListener('click', e => {
@@ -48,6 +40,7 @@ addButton.addEventListener('click', e => {
     addPlayer(playersInfo, obj)
     removeInputs(borders)
   } else {
+    errorMsg.style.display = 'block'
     removeBdrStyles(borders)
     errorMsg.textContent = msg
     let elements = document.getElementsByClassName(field)
