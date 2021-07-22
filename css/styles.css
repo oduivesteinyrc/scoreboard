@@ -1,8 +1,8 @@
 :root {
-  --primary-color : #e5c9c5;
-  --dark-color : #333;
+  --primary-color : #a2d5c6;
+  --dark-color : #5c3c92;
   --light-color: #f3f3f3;
-  --del-col : #f17b71;
+  --del-col : #077b8a;
 
 }
 
@@ -46,6 +46,7 @@ h1 {
   border: none;
   padding: 0.5rem 1rem;
   background: var(--primary-color);
+  color: var(--dark-color);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
@@ -71,7 +72,7 @@ h1 {
  align-items: flex-start;
 }
 .player-name p:last-child {
-  color: gray;
+  color: var(--del-col);
   font-size: 0.75rem;
 }
 .player-edit {
@@ -92,7 +93,7 @@ h1 {
   transition: all,0.5s ease-in-out;
 }
 .player-edit i {
-  color: var(--del-col);
+  color: var(--dark-color);
 }
 .player-edit div:hover i {
   color :var(--light-color)
