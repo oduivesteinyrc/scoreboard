@@ -71,7 +71,12 @@ const editPlayer = (playersInfo, id, action) => {
   if (action == 'minus') {
     playersJSON = playersJSON.map(player => {
       if (player.id == id) {
-        player.score += -5
+        if (player.score <= 0) {
+          player.score = 0
+        } else {
+          player.score += -5
+        }
+
       }
       return player
     })
