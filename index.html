@@ -5,26 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./images/score.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/mobile.css">
-  <title>Player Scoreboard</title>
+  <title>Coach Assist Scoreboard</title>
 </head>
 
 <body>
+  <div class="header-bar">
+    <div class="logo-title-row">
+      <img src="images/yava-ai.svg" alt="Yava AI Logo">
+      <div class="title-group">
+        <h1>Coach Assist Scoreboard</h1>
+        <div class="subtitle">Yource Future Event</div>
+      </div>
+    </div>
+  </div>
   <header>
     <div class="wrapper">
-      <h1>Leader Scoreboard</h1>
       <div class="header-grid">
-        <input type="text" name="first-name" class="first-name
-         bdr" placeholder="First Name">
-        <input type="text" name="last-name" class="last-name bdr" placeholder="Last Name">
-        <input type="text" name="country" class="country bdr" placeholder="Country">
-        <input type="text" name="player-score" class="player-score bdr" placeholder="Player Score">
-        <button class="btn">Add Player</button>
+        <input type="text" name="first-name" class="first-name bdr" placeholder="Voornaam">
+        <input type="text" name="last-name" class="last-name bdr" placeholder="Achternaam">
+        <input type="text" name="company" class="company bdr" placeholder="Bedrijf">
+        <input type="text" name="uuid" class="uuid bdr" placeholder="UUID">
+        <input type="text" name="player-score" class="player-score bdr" placeholder="Score">
+        <button class="btn">Voeg toe</button>
       </div>
       <p class="error-msg"></p>
     </div>

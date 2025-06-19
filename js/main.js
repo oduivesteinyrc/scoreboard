@@ -2,8 +2,9 @@ const playersInfo = document.querySelector('.players-info')
 const addButton = document.querySelector('.btn')
 const userFirstName = document.querySelector('.first-name')
 const userLastName = document.querySelector('.last-name')
-const userCountry = document.querySelector('.country')
+const userCompany = document.querySelector('.company')
 const userScore = document.querySelector('.player-score')
+const userUuid = document.querySelector('.uuid')
 const errorMsg = document.querySelector('.error-msg')
 const borders = document.querySelectorAll('.bdr')
 
@@ -20,13 +21,15 @@ addButton.addEventListener('click', e => {
   e.preventDefault()
   let firstName = userFirstName.value.trim()
   let lastName = userLastName.value.trim()
-  let country = userCountry.value.trim()
+  let company = userCompany.value.trim()
   let score = userScore.value.trim()
+  let uuid = userUuid.value.trim()
   let obj = {
     firstName,
     lastName,
-    country,
-    score
+    company,
+    score,
+    uuid
   }
   let valid = validatePlayer(obj)
   let {

@@ -31,11 +31,12 @@ const removeInputs = borders => {
 const addPlayer = (playersInfo, {
   firstName,
   lastName,
-  country,
-  score
+  company,
+  score,
+  uuid
 }) => {
   playersInfo.innerHTML = ''
-  let id = uuidv4()
+  let id = uuid.trim()
   let date = moment().format('MMM DD, YYYY HH:mm')
   score = Number(score)
   let playersJSON = getPlayers()
@@ -43,7 +44,7 @@ const addPlayer = (playersInfo, {
     id,
     firstName,
     lastName,
-    country,
+    company,
     score,
     date
   })
@@ -89,7 +90,7 @@ const editPlayer = (playersInfo, id, action) => {
   }
 }
 
-const createNameDiv = (playersGrid, firstName, lastName, date) => {
+const createNameDiv = (playersGrid, firstName, lastName, date, id) => {
   playersGrid.className = 'players-grid'
   const playerDiv = document.createElement('div')
   playerDiv.className = 'player-name'
@@ -97,14 +98,18 @@ const createNameDiv = (playersGrid, firstName, lastName, date) => {
   fullName.textContent = firstName + ' ' + lastName
   const dateInfo = document.createElement('p')
   dateInfo.textContent = date
+  const uuidInfo = document.createElement('p')
+  uuidInfo.textContent = id
+  uuidInfo.className = 'player-uuid'
   playerDiv.appendChild(fullName)
   playerDiv.appendChild(dateInfo)
+  playerDiv.appendChild(uuidInfo)
   playersGrid.appendChild(playerDiv)
 }
-const createCountryDiv = (playersGrid, country) => {
-  const countryDiv = document.createElement('div')
-  countryDiv.textContent = country
-  playersGrid.appendChild(countryDiv)
+const createCompanyDiv = (playersGrid, company) => {
+  const companyDiv = document.createElement('div')
+  companyDiv.textContent = company
+  playersGrid.appendChild(companyDiv)
 }
 const createScoreDiv = (playersGrid, score) => {
   const scoreDiv = document.createElement('div')
@@ -134,17 +139,18 @@ const createEditDiv = (playersGrid, playersInfo, id) => {
     editPlayer(playersInfo, id, 'minus')
   })
 }
+
 const displayPlayers = (playersInfo, {
   id,
   firstName,
   lastName,
-  country,
+  company,
   score,
   date
 }) => {
   const playersGrid = document.createElement('div')
-  createNameDiv(playersGrid, firstName, lastName, date)
-  createCountryDiv(playersGrid, country)
+  createNameDiv(playersGrid, firstName, lastName, date, id)
+  createCompanyDiv(playersGrid, company)
   createScoreDiv(playersGrid, score)
   createEditDiv(playersGrid, playersInfo, id)
   playersInfo.appendChild(playersGrid)
